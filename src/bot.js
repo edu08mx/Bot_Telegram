@@ -21,18 +21,10 @@ bot.on('message', (msg) => {
 });
 
 // Lida com comandos personalizados
-bot.onText(/\/minhocomando/, (msg) => {
+bot.onText(/\/comando/, (msg) => {
   const chatId = msg.chat.id;
 
   bot.sendMessage(chatId, 'Você acionou o comando personalizado!');
-});
-
-// Lida com comandos com parâmetros
-bot.onText(/\/comandocomparametro (.+)/, (msg, match) => {
-  const chatId = msg.chat.id;
-  const parametro = match[1];
-
-  bot.sendMessage(chatId, `Você acionou o comando com parâmetro: ${parametro}`);
 });
 
 // Lida com ação de clique em um botão inline
